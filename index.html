@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear Content Photography | Professional Creative Studio</title>
+    
+    <!-- Fonts: Playfair Display (Headings) and Montserrat (Body) for a premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-bg: #ffffff;
+            --secondary-bg: #f4f4f2; /* Light beige/off-white */
+            --text-main: #1a1a1a;
+            --text-light: #666666;
+            --accent-black: #000000;
+            --accent-gold: #c5a059; /* Subtle gold for elegance */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: all 0.3s ease;
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-black);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-black);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            border-color: var(--accent-black);
+            color: var(--accent-black);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: var(--accent-black);
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-black);
+            transition: var(--transition);
+        }
+
+        .nav-links li a:hover::after,
+        .nav-links li a.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            /* Using the provided artistic family image as background */
+            background-image: url('https://z-cdn-media.chatglm.cn/files/0c10ef34-6319-448b-b85b-f958110f8a7e.jpg?auth_key=1868092291-2f1f5af9095842daa6ffb6069ab4c27a-0-37bbd30743ca675c4cae9858c07b822b');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4); /* Dark overlay for text readability */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+            max-width: 800px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .section {
+            padding: 80px 20px;
+        }
+
+        .about-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: 4px;
+            box-shadow: 20px 20px 0px var(--secondary-bg);
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services {
+            background-color: var(--secondary-bg);
+        }
+
+        .packages-grid {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: #fff;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .package-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-family: var(--font-heading);
+        }
+
+        .package-price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent-black);
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .package-features li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .package-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        /* --- PORTFOLIO SECTION --- */
+        .portfolio-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            padding: 8px 16px;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--accent-black);
+            color: #fff;
+        }
+
+        .gallery-grid {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h4 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            transform: translateY(20px);
+            transition: 0.4s ease;
+        }
+
+        .gallery-item:hover .overlay h4 {
+            transform: translateY(0);
+        }
+
+        /* --- BOOKING SECTION --- */
+        .booking-section {
+            background-color: var(--secondary-bg);
+        }
+
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-black);
+        }
+
+        select.form-control {
+            background-color: #fff;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--accent-black);
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            color: var(--text-light);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--accent-black);
+            color: #fff;
+            padding: 60px 20px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .social-icons {
+            margin-bottom: 30px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: var(--transition);
+            color: #fff;
+        }
+
+        .social-icons a:hover {
+            background-color: #fff;
+            color: var(--accent-black);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* --- TOAST NOTIFICATION --- */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent-black);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-container, .contact-container { grid-template-columns: 1fr; }
+            .about-image { margin-top: 30px; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+                transform: translateY(-150%);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            .nav-links.nav-active { transform: translateY(0); }
+            .hero-btns { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <!-- Logo provided in prompt -->
+                <img src="https://z-cdn-media.chatglm.cn/files/7016b836-4fcf-45a1-afba-62e3b1a4009b.png?auth_key=1868092291-82acc1053a21458cb04b9e234c9aea6f-0-25228c16a61305815953908a884fa2e5" alt="Bear Content Photography Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home / Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Capturing Stories Through Powerful Visuals</h1>
+            <p>Professional Photography &amp; Creative Content Studio</p>
+            <div class="hero-btns">
+                <a href="#booking" class="btn btn-primary">Book a Photoshoot</a>
+                <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+        <div class="about-container reveal">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left;">About Us</h2>
+                <h3>We Are BEAR CONTENT PHOTOGRAPHY</h3>
+                <p>We are a premier photography studio dedicated to the art of visual storytelling. Our approach blends creativity, technical precision, and a genuine passion for capturing moments that matter.</p>
+                <p>Whether it's the intimate bond of a family, the dynamic energy of a brand, or the quiet elegance of a portrait, we focus on the emotions and narratives behind every frame. We serve individuals, brands, and businesses looking to elevate their visual identity.</p>
+                <a href="#portfolio" class="btn btn-primary" style="margin-top: 10px;">See Our Work</a>
+            </div>
+            <div class="about-image">
+                <!-- Using the fashion/portrait image for About section -->
+                <img src="https://z-cdn-media.chatglm.cn/files/0033181d-db0d-44d6-964e-b77204eddb77.JPEG?auth_key=1868092291-eade0bf5bbe94299820dfd8995a52f80-0-9e67345fcf72267ec485be41f5771ff6" alt="Photography Style Example">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Packages Section -->
+    <section id="services" class="section services">
+        <h2 class="section-title reveal">Services &amp; Packages</h2>
+        <p class="section-subtitle reveal">Choose the perfect plan for your creative needs.</p>
+        
+        <div class="packages-grid">
+            <!-- Package 1 -->
+            <div class="package-card reveal">
+                <h3 class="package-title">Basic Shoot</h3>
+                <div class="package-price">20만원</div>
+                <ul class="package-features">
+                    <li>1-hour session</li>
+                    <li>20 edited photos</li>
+                    <li>Studio or outdoor location</li>
+                    <li>Ideal for portraits or personal branding</li>
+                    <li>Online gallery</li>
+                </ul>
+                <a href="#booking" class="btn btn-outline" style="color:var(--accent-black); border-color:var(--accent-black);">Book Now</a>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="package-card reveal">
+                <h3 class="package-title">Standard Shoot</h3>
+                <div class="package-price">25만원</div>
+                <ul class="package-features">
+                    <li>2-hour session</li>
+                    <li>25 edited photos</li>
+                    <li>1 or 2 outfit changes</li>
+                    <li>Perfect for creatives &amp; small businesses</li>
+                    <li>High-res downloads included</li>
+                </ul>
+                <a href="#booking" class="btn btn-outline" style="color:var(--accent-black); border-color:var(--accent-black);">Book Now</a>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="package-card reveal">
+                <h3 class="package-title">Premium Shoot</h3>
+                <div class="package-price">34만원</div>
+                <ul class="package-features">
+                    <li>Half-day session</li>
+                    <li>150+ edited photos</li>
+                    <li>Creative direction &amp; styling support</li>
+                    <li>Best for brands, campaigns &amp; commercial</li>
+                    <li>Priority editing &amp; delivery</li>
+                </ul>
+                <a href="#booking" class="btn btn-outline" style="color:var(--accent-black); border-color:var(--accent-black);">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Gallery Section -->
+    <section id="portfolio" class="section">
+        <h2 class="section-title reveal">Our Portfolio</h2>
+        <div class="portfolio-nav reveal">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="family">Family</button>
+            <button class="filter-btn" data-filter="couple">Couple</button>
+            <button class="filter-btn" data-filter="fashion">Fashion</button>
+            <button class="filter-btn" data-filter="details">Details</button>
+        </div>
+
+        <div class="gallery-grid reveal">
+            <!-- 1. Family/Artistic (vdvdv.jpg) -->
+            <div class="gallery-item" data-category="family">
+                <img src="https://z-cdn-media.chatglm.cn/files/0c10ef34-6319-448b-b85b-f958110f8a7e.jpg?auth_key=1868092291-2f1f5af9095842daa6ffb6069ab4c27a-0-37bbd30743ca675c4cae9858c07b822b" alt="Artistic Family Portrait">
+                <div class="overlay">
+                    <h4>Artistic Family</h4>
+                    <span>Portrait</span>
+                </div>
+            </div>
+
+            <!-- 2. Family/White (DSC06831) -->
+            <div class="gallery-item" data-category="family">
+                <img src="https://z-cdn-media.chatglm.cn/files/bff96e94-69fa-4a23-90d7-d0a49a5ed11f.jpg?auth_key=1868092291-61ad1388a4b747e8bee7ce212a4a1831-0-49889f67f8beae61aa85f25da734e508" alt="White Theme Family">
+                <div class="overlay">
+                    <h4>Family Moments</h4>
+                    <span>Lifestyle</span>
+                </div>
+            </div>
+
+            <!-- 3. Couple/Hug (6 ..JPEG) -->
+            <div class="gallery-item" data-category="couple">
+                <img src="https://z-cdn-media.chatglm.cn/files/cacf3f0f-6f2a-4325-8ac6-62703c213bd6.JPEG?auth_key=1868092291-8e4a08d034304cfc850ac961eb4d7dd8-0-64759b2b4b45b4be4762c761a0dc154a" alt="Couple Embrace">
+                <div class="overlay">
+                    <h4>Intimate Moments</h4>
+                    <span>Couple</span>
+                </div>
+            </div>
+
+            <!-- 4. Couple/White (9 2.JPEG) -->
+            <div class="gallery-item" data-category="couple">
+                <img src="https://z-cdn-media.chatglm.cn/files/0ad60618-0559-4b60-bfa0-6cb700abb365.JPEG?auth_key=1868092291-b4aa85f55db549faad9be090928865d9-0-2a38f4a8deca34fff0a8820b978822da" alt="Couple White">
+                <div class="overlay">
+                    <h4>Love Story</h4>
+                    <span>Couple</span>
+                </div>
+            </div>
+
+            <!-- 5. Fashion/Red (1212121.JPEG) -->
+            <div class="gallery-item" data-category="fashion">
+                <img src="https://z-cdn-media.chatglm.cn/files/0033181d-db0d-44d6-964e-b77204eddb77.JPEG?auth_key=1868092291-eade0bf5bbe94299820dfd8995a52f80-0-9e67345fcf72267ec485be41f5771ff6" alt="Fashion Red Dress">
+                <div class="overlay">
+                    <h4>Red Elegance</h4>
+                    <span>Fashion</span>
+                </div>
+            </div>
+
+            <!-- 6. Wedding/Decor (667EF...) -->
+            <div class="gallery-item" data-category="details">
+                <img src="https://z-cdn-media.chatglm.cn/files/8c48f9ad-aecb-4f4e-a557-251139e58ef1.JPG?auth_key=1868092291-710086e8fcac4baa81534f214cb764d9-0-96c70bf5c689f16c9f839a3ea79816a3" alt="Wedding Proposal">
+                <div class="overlay">
+                    <h4>Proposal</h4>
+                    <span>Wedding</span>
+                </div>
+            </div>
+
+            <!-- 7. Child (DSC04213) -->
+            <div class="gallery-item" data-category="family">
+                <img src="https://z-cdn-media.chatglm.cn/files/a2203ee4-ccb0-484e-8c8e-5ab4c9d6c200.jpg?auth_key=1868092291-78c7bf68ec5546839e1dee1c57b4e85d-0-33cdf5aaa3fb12eba3533521b5a1f32e" alt="Child Photography">
+                <div class="overlay">
+                    <h4>Little Sailor</h4>
+                    <span>Kids</span>
+                </div>
+            </div>
+
+             <!-- 8. Ring/Details (DSC03212.JPG) -->
+             <div class="gallery-item" data-category="details">
+                <img src="https://z-cdn-media.chatglm.cn/files/7fb4c8b9-7417-4ffd-85fa-940094e35631.JPG?auth_key=1868092291-085e3d9a636d48e895d7fb49f2f29290-0-db661b8a6069518422656317892cf9e2" alt="Ring Detail">
+                <div class="overlay">
+                    <h4>Fine Details</h4>
+                    <span>Commercial</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Photoshoot Page -->
+    <section id="booking" class="section booking-section">
+        <h2 class="section-title reveal">Book Your Session</h2>
+        <p class="section-subtitle reveal">Ready to create beautiful memories? Fill out the form below.</p>
+
+        <div class="booking-container reveal">
+            <form id="bookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="package">Select Package</label>
+                        <select id="package" class="form-control">
+                            <option value="Basic">Basic Shoot ($299)</option>
+                            <option value="Standard">Standard Shoot ($499)</option>
+                            <option value="Premium">Premium Shoot ($999)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Preferred Date &amp; Time</label>
+                    <input type="datetime-local" id="date" class="form-control" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message / Special Requests</label>
+                    <textarea id="message" rows="5" class="form-control" placeholder="Tell us about your vision, location ideas, etc."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Booking Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="section">
+        <h2 class="section-title reveal">Get In Touch</h2>
+        
+        <div class="contact-container reveal">
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">
+                        <h4>Email Us</h4>
+                        <p>bearcontent16@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-text">
+                        <h4>Call Us</h4>
+                        <p>0103367818</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <h4>Location</h4>
+                        <p>Based in [Deagu, South Korea]</p>
+                    </div>
+                </div>
+
+                <!-- Simple contact form inside contact section -->
+                <form id="contactForm" style="margin-top: 30px;">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" required="">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="3" class="form-control" placeholder="Your Message" required=""></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Google Map Embed Placeholder -->
+            <div class="map-wrapper">
+                <div class="map-container">
+                    <!-- Using an iframe for a generic city center map as placeholder -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153169!3d-37.81732797975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sus!4v1620292234567!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">BEAR CONTENT PHOTOGRAPHY</div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p class="copyright">© 2023 Bear Content Photography. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Custom Toast Notification -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Request Sent Successfully!</span>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+        // --- Navigation Scroll Effect ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // --- Mobile Menu Toggle ---
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksItems = document.querySelectorAll('.nav-links li a');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            // Animate hamburger icon change (optional)
+            hamburger.classList.toggle('toggle');
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('nav-active');
+            });
+        });
+
+        // --- Scroll Reveal Animation ---
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 150;
+
+            revealElements.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Trigger once on load
+        revealOnScroll();
+
+        // --- Portfolio Filtering ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        // Add a small animation for reappearing items
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.style.display = 'none';
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                    }
+                });
+            });
+        });
+
+        // --- Form Handling (Simulated) ---
+        const showToast = (message) => {
+            const toast = document.getElementById('toast');
+            const toastText = toast.querySelector('span');
+            toastText.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        };
+
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real app, you would send data to a backend here.
+            showToast('Booking request sent! We will contact you soon.');
+            e.target.reset();
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            showToast('Message sent successfully!');
+            e.target.reset();
+        });
+
+    </script>
+
+</body></html>
